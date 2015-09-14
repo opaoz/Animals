@@ -1,0 +1,14 @@
+{
+    "name": "Animals",
+    "description": "Animals lib",
+    "dependencies": {
+        "bootstrap": "~3.5.5",
+        "angular": "~1.4.5"
+    },
+    "ignore": [
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}
