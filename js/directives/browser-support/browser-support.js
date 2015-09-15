@@ -24,6 +24,7 @@
             for (prop in scope.obj) {
                 if (scope.obj.hasOwnProperty(prop)) {
                     
+                    
                 }
             }
         }
