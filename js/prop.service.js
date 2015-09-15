@@ -3,9 +3,9 @@
 
     angular
         .module('cssTester')
-        .service('Service', Service);
+        .service('propService', Service);
 
-    Service.$inject = [''];
+    //Service.$inject = [''];
 
     function Service() {
         var styles = [
@@ -894,7 +894,7 @@
             return props;
         }
 
-        this.getPropertiesStats = function (prop) {
+        this.getPropertyStats = function (prop) {
             var result;
 
             angular.forEach(styles, function (value) {

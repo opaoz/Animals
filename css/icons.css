@@ -1,0 +1,44 @@
+.icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-repeat: no-repeat;
+}
+.black-n-white {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+}
+.ie {
+    background: url(../images/ie.gif);
+}
+.chrome {
+    background: url(../images/chrome.gif);
+}
+.firefox {
+    background: url(../images/firefox.gif);
+}
+.opera {
+    background: url(../images/opera.gif);
+}
+.safari {
+    background: url(../images/safari.gif);
+}
+.ie.pre {
+    background: url(../images/pre-ie.gif);
+}
+.chrome.pre {
+    background: url(../images/pre-chrome.gif);
+}
+.firefox.pre {
+    background: url(../images/pre-firefox.gif);
+}
+.opera.pre {
+    background: url(../images/pre-opera.gif);
+}
+.safari.pre {
+    background: url(../images/pre-safari.gif);
+}
