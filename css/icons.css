@@ -1,5 +1,5 @@
 .icon {
-    width: 20px;
+    width: 60px;
     margin: 0 auto;
     height: 20px;
     display: block;
@@ -12,9 +12,6 @@
     -o-filter: grayscale(100%);
     filter: grayscale(100%);
     filter: gray;
-}
-.pre {
-    width: 60px;
 }
 .ie {
     background-image: url(../images/ie.gif);

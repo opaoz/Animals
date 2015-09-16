@@ -5,8 +5,6 @@
         .module('cssTester')
         .service('propService', Service);
 
-    //Service.$inject = [''];
-
     function Service() {
         var styles = [
             {
