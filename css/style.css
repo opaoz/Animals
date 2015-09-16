@@ -1,13 +1,14 @@
 body {
     background: url(http://subtlepatterns.com/patterns/use_your_illusion.png);
     color: #ffffff;
+    min-width: 490px;
 }
 tr >:first-child {
     text-align: right;
     font-weight: bold;
 }
 .row-table {
-    margin-top: 260px;
+    margin-top: 300px;
 }
 .thumbnail {
     min-height: 260px;
@@ -33,10 +34,9 @@ tr >:first-child {
     font-size: 18pt;
     border-bottom: 2px dashed;
     text-decoration: none;
-    /*text-decoration: underline;
-    text-decoration-style: dashed;*/
+    color: #ffffff;
 }
-.input-group {
+.input-text {
     width: 100%;
 }
 textarea {
@@ -44,6 +44,19 @@ textarea {
     max-width: 100%;
     max-height: 400px;
     width: 100%;
+}
+.btn-lyze {
+    background: #4EC6DE;
+    margin-top: 25px;
+}
+.response {
+    margin-top: 15px;
+    text-align: center;
+    display: inline-block;
+}
+.response .browsers li {
+    margin-top: 0;
+    padding: 5px 0 0 0;
 }
 
 /* TABS */
@@ -79,7 +92,7 @@ textarea {
     width: 100%;
     position: absolute;
     border: 2px solid #4EC6DE;
-    padding: 10px 30px 40px;
+    padding: 10px 30px 20px;
     line-height: 1.4em;
     opacity: 0;
     transform: rotateX(-20deg);
@@ -88,9 +101,7 @@ textarea {
     z-index: 0;
 }
 #tab-nav-1:checked ~ .tabs > div:nth-of-type(1),
-#tab-nav-2:checked ~ .tabs > div:nth-of-type(2),
-#tab-nav-3:checked ~ .tabs > div:nth-of-type(3),
-#tab-nav-4:checked ~ .tabs > div:nth-of-type(4) {
+#tab-nav-2:checked ~ .tabs > div:nth-of-type(2) {
     transform: rotateX(0deg);
     opacity: 1;
     z-index: 1;

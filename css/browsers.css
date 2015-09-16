@@ -9,21 +9,21 @@
     width: 60px;
     margin-top: 15px;
 }
-.browsers li:nth-child(1) {
+.help .browsers li:nth-child(1) {
     display: block;
     margin: 0 auto;
 }
-.browsers li:nth-child(2),
-.browsers li:nth-child(3) {
+.help .browsers li:nth-child(2),
+.help .browsers li:nth-child(3) {
     display: inline-block;
     width: 50%;
 }
-.browsers li:nth-child(4),
-.browsers li:nth-child(5) {
+.help .browsers li:nth-child(4),
+.help .browsers li:nth-child(5) {
     display: inline-block;
     width: 30%;
 }
-.browsers li:nth-child(4) {
+.help .browsers li:nth-child(4) {
     margin-left: 20%;
 }
 .icon.black-n-white {
