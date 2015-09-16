@@ -13,7 +13,7 @@
             restrict: 'A',
             replace: true,
             //templateUrl: 'directives/row/row.html'
-            template: '<tr ng-repeat="prop in props track by $index"><td>{{$index+1}}</td><td>{{prop.bsProperty}}</td><td browser-support="prop"></td></tr>',
+            template: '<tr ng-repeat="prop in props track by $index"><td>{{$index+1}}</td><td ng-bind-html="prop.bsProperty | htmlBook | trust"></td><td browser-support="prop"></td></tr>',
             scope: {
                 props: '=styleRow'
             }

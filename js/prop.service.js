@@ -566,14 +566,14 @@
                 "bsProperty": "marquee-speed",
                 "bsNoIE": 0,
                 "bsNoFirefox": 0,
-                "bsPreSafari": 0,
+                "bsPreChrome": 0,
                 "bsPreSafari": 0,
                 "bsNoOpera": 0
                 }, {
                 "bsProperty": "marquee-style",
                 "bsNoIE": 0,
                 "bsNoFirefox": 0,
-                "bsPreSafari": 0,
+                "bsPreChrome": 0,
                 "bsPreSafari": 0,
                 "bsNoOpera": 0
                 }, {

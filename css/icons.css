@@ -1,5 +1,6 @@
 .icon {
     width: 20px;
+    margin: 0 auto;
     height: 20px;
     display: block;
     background-repeat: no-repeat;
@@ -12,20 +13,23 @@
     filter: grayscale(100%);
     filter: gray;
 }
+.pre {
+    width: 60px;
+}
 .ie {
-    background: url(../images/ie.gif);
+    background-image: url(../images/ie.gif);
 }
 .chrome {
-    background: url(../images/chrome.gif);
+    background-image: url(../images/chrome.gif);
 }
 .firefox {
-    background: url(../images/firefox.gif);
+    background-image: url(../images/firefox.gif);
 }
 .opera {
-    background: url(../images/opera.gif);
+    background-image: url(../images/opera.gif);
 }
 .safari {
-    background: url(../images/safari.gif);
+    background-image: url(../images/safari.gif);
 }
 .ie.pre {
     background: url(../images/pre-ie.gif);

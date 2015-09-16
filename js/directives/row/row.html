@@ -1,5 +1,5 @@
 <tr ng-repeat="prop in props track by $index">
     <td>{{$index+1}}</td>
-    <td>{{prop.bsProperty}}</td>
+    <td ng-bind-html="prop.bsProperty | htmlBook | trust"></td>
     <td browser-support="prop"></td>
 </tr>
