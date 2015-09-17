@@ -20,6 +20,7 @@
         function link(scope, element, attrs) {
             scope.$watch('obj', function (newV) {
                 if (newV) {
+                    element.empty();
                     var result = angular.element('<ul class="browsers"></ul>'),
                         prop;
 

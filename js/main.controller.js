@@ -7,7 +7,6 @@
 
     Controller.$inject = ['propService'];
 
-    /* @ngInject */
     function Controller(propService) {
         var vm = this;
         activate();
@@ -15,7 +14,7 @@
         vm.analyze = function () {
             var text = vm.text,
                 regexp = /([A-Za-z-]{3,}):.*;/gi,
-                match,
+                match, once = false,
                 result = {
                     chrome: [],
                     firefox: [],
@@ -25,47 +24,57 @@
                 };
 
             while ((match = regexp.exec(text)) != null) {
+                once = true;
                 angular.forEach(vm.props, function (prop) {
                     if (match[1].toLowerCase() === prop.bsProperty.toLowerCase()) {
-                        result.chrome.push(prop['bsNoChrome'] || prop['bsPreChrome'] || prop['bsChrome']);
-                        result.firefox.push(prop['bsNoFirefox'] || prop['bsPreFirefox'] || prop['bsFirefox']);
-                        result.opera.push(prop['bsNoOpera'] || prop['bsPreOpera'] || prop['bsOpera']);
-                        result.safari.push(prop['bsNoSafari'] || prop['bsPreSafari'] || prop['bsSafari']);
-                        result.ie.push(prop['bsNoIE'] || prop['bsPreIE'] || prop['bsIE']);
+                        result.chrome.push(getBrowserVersion('Chrome', prop));
+                        result.firefox.push(getBrowserVersion('Firefox', prop));
+                        result.opera.push(getBrowserVersion('Opera', prop));
+                        result.safari.push(getBrowserVersion('Safari', prop));
+                        result.ie.push(getBrowserVersion('IE', prop));
 
                         return false;
                     }
                 });
             }
-            vm.result = {};
-            vm.result[result.chrome.max() === 0 ? 'bsNoChrome' : 'bsChrome'] = result.chrome.max();
-            vm.result[result.opera.max() === 0 ? 'bsNoOpera' : 'bsOpera'] = result.opera.max();
-            vm.result[result.safari.max() === 0 ? 'bsNoSafari' : 'bsSafari'] = result.safari.max();
-            vm.result[result.ie.max() === 0 ? 'bsNoIE' : 'bsIE'] = result.ie.max();
-            vm.result[result.firefox.max() === 0 ? 'bsNoFirefox' : 'bsFirefox'] = result.firefox.max();
-            var a;
-        };
 
+            if (once) {
+                vm.result = {};
+                setBrowserVersion('Chrome');
+                setBrowserVersion('Firefox');
+                setBrowserVersion('Opera');
+                setBrowserVersion('Safari');
+                setBrowserVersion('IE');
+            }
+
+            function getBrowserVersion(browser, obj) {
+                return obj['bsNo' + browser] || obj['bsPre' + browser] || obj['bs' + browser];
+            }
+
+            function setBrowserVersion(browser) {
+                vm.result[result[browser.toLowerCase()].max() === 0 ? 'bsNo' + browser : 'bs' + browser] = result[browser.toLowerCase()].max();
+            }
+        };
 
         function activate() {
             vm.text = '';
             vm.props = propService.getStyles();
-            /*vm.result = {
-                "bsProperty": "align-content",
-                "bsIE": 11,
-                "bsFirefox": 28,
-                "bsChrome": 21,
-                "bsPreSafari": 7,
-                "bsOpera": 12.1
-            };*/
+            vm.alphabet = [];
+            angular.forEach(vm.props, function (value) {
+                var first = value.bsProperty.toLowerCase().replace(/[^a-z]/g, '')[0];
+                if (vm.alphabet.indexOf(first) === -1) {
+                    vm.alphabet.push(first);
+                }
+            });
         }
 
         Array.prototype.max = function () {
-            return Math.max.apply(null, this);
+            var array = this.filter(function (value) {
+                    return value !== undefined;
+                }),
+                result = Math.max.apply(null, array);
+            return result > 0 ? result : 0;
         };
 
-        Array.prototype.min = function () {
-            return Math.min.apply(null, this);
-        };
     }
 })();

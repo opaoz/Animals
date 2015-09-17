@@ -1,45 +1,56 @@
 .icon {
-    width: 60px;
+    width: 40px;
+    height: 40px;
     margin: 0 auto;
-    height: 20px;
     display: block;
     background-repeat: no-repeat;
-}
-.black-n-white {
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    filter: grayscale(100%);
-    filter: gray;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .ie {
-    background-image: url(../images/ie.gif);
+    background-image: url(../images/ie.png);
 }
 .chrome {
-    background-image: url(../images/chrome.gif);
+    background-image: url(../images/chrome.png);
 }
 .firefox {
-    background-image: url(../images/firefox.gif);
+    background-image: url(../images/firefox.png);
 }
 .opera {
-    background-image: url(../images/opera.gif);
+    background-image: url(../images/opera.png);
 }
 .safari {
-    background-image: url(../images/safari.gif);
+    background-image: url(../images/safari.png);
+}
+.ie.black-n-white {
+    background-image: url(../images/ie-bw.png);
+}
+.chrome.black-n-white {
+    background-image: url(../images/chrome-bw.png);
+}
+.firefox.black-n-white {
+    background-image: url(../images/firefox-bw.png);
+}
+.opera.black-n-white {
+    background-image: url(../images/opera-bw.png);
+}
+.safari.black-n-white {
+    background-image: url(../images/safari-bw.png);
 }
 .ie.pre {
-    background: url(../images/pre-ie.gif);
+    background-image: url(../images/pre-ie.png);
 }
 .chrome.pre {
-    background: url(../images/pre-chrome.gif);
+    background-image: url(../images/pre-chrome.png);
 }
 .firefox.pre {
-    background: url(../images/pre-firefox.gif);
+    background-image: url(../images/pre-firefox.png);
 }
 .opera.pre {
-    background: url(../images/pre-opera.gif);
+    background-image: url(../images/pre-opera.png);
 }
 .safari.pre {
-    background: url(../images/pre-safari.gif);
+    background-image: url(../images/pre-safari.png);
 }

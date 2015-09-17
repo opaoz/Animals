@@ -1,17 +1,14 @@
 body {
     background: url(http://subtlepatterns.com/patterns/use_your_illusion.png);
     color: #ffffff;
-    min-width: 490px;
+    min-width: 520px;
 }
 tr >:first-child {
     text-align: right;
     font-weight: bold;
 }
-.row-table {
-    margin-top: 300px;
-}
 .thumbnail {
-    min-height: 260px;
+    min-height: 250px;
 }
 .caption h3 {
     height: 30px;
@@ -39,17 +36,22 @@ tr >:first-child {
 .input-text {
     width: 100%;
 }
+.input-button {
+    display: inline-block;
+}
 textarea {
     resize: none;
     max-width: 100%;
-    max-height: 400px;
+    max-height: 200px;
     width: 100%;
 }
 .btn-lyze {
     background: #4EC6DE;
-    margin-top: 25px;
+    margin-top: 35px;
 }
 .response {
+    width: 305px;
+    height: 75px;
     margin-top: 15px;
     text-align: center;
     display: inline-block;
@@ -57,6 +59,37 @@ textarea {
 .response .browsers li {
     margin-top: 0;
     padding: 5px 0 0 0;
+}
+.response .result {
+    line-height: 75px;
+    vertical-align: middle;
+    font-size: 16px;
+    background: #777;
+    padding: 5px;
+    border-radius: 5px;
+}
+.about {
+    font-size: 14pt;
+    font-weight: 300;
+    height: 360px;
+    overflow: hidden;
+}
+.about p {
+    text-indent: 25px;
+}
+.about strong {
+    font-style: italic;
+}
+#toTop {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #4EC6DE;
+    border: #4EC6DE;
+    color: #ffffff;
+    padding: 10px;
+    text-decoration: none;
 }
 
 /* TABS */
@@ -66,6 +99,7 @@ textarea {
 }
 .tabbed {
     width: 100%;
+    height: 360px;
     margin: 50px auto;
 }
 .tabbed > input {
@@ -79,6 +113,7 @@ textarea {
     width: 50%;
     cursor: pointer;
     transition: background-color .3s;
+    font-size: 16px;
 }
 .tabbed > label:hover,
 .tabbed > input:checked + label {

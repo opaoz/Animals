@@ -8,15 +8,16 @@
     function alphabet() {
 
         var directive = {
-            link: link,
             restrict: 'A',
             template: '<a ng-repeat="letter in letters" href="#{{letter}}">{{letter}}</a>',
-            scope: {}
+            scope: {
+                letters: '=alphabet'
+            },
+            link: function (scope) {
+                scope.letters = scope.letters.sort();
+            }
         };
         return directive;
 
-        function link(scope, element, attrs) {
-            scope.letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
-        }
     }
 })();

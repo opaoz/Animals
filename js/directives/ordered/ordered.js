@@ -13,7 +13,7 @@
             link: link,
             restrict: 'A',
             replace: true,
-            template: '<div class="row" ng-repeat="pack in packs"><div ng-if="pack.array.length > 0" class="alert capital-row" id="{{pack.letter}}">{{pack.letter}}</div><div style-row="pack.array"></div></div>',
+            template: '<div class="row" ng-repeat="pack in packs"><div ng-if="pack.array.length > 0" class="alert capital-row" name="{{pack.letter}}">{{pack.letter}}</div><div style-row="pack.array"></div></div>',
             scope: {
                 source: '=ordered'
             }

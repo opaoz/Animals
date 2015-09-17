@@ -14,43 +14,49 @@
 
 <body ng-app="cssTester">
     <div class="container" ng-controller="MainController as vm">
+        <div name="top"></div>
         <div class="row">
             <div class="col-xs-12">
                 <div class="tabbed">
-                    <input type="radio" name="tabs" id="tab-nav-1">
-                    <label for="tab-nav-1">Enter as file</label>
-                    <input type="radio" name="tabs" id="tab-nav-2" checked>
-                    <label for="tab-nav-2">Enter as text</label>
+                    <input type="radio" name="tabs" id="tab-nav-1" checked>
+                    <label for="tab-nav-1">Проверить CSS</label>
+                    <input type="radio" name="tabs" id="tab-nav-2">
+                    <label for="tab-nav-2">О сайте</label>
                     <div class="tabs">
-                        <div>
-                            <h2>Enter as file</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla tortor, a posuere urna. Praesent urna quam, semper ut ultricies et, mollis ac elit. </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla tortor, a posuere urna. Praesent urna quam, semper ut ultricies et, mollis ac elit. Suspendisse tempor, lacus id consectetur sagittis, lorem odio dignissim nulla, a condimentum sem neque sed ligula. Maecenas id risus eros, eget porttitor metus. Quisque pellentesque neque dignissim nisl pellentesque vitae tempus urna eleifend. Nullam egestas, neque id placerat luctus, nibh velit pharetra nulla, vel pretium justo massa ut elit. Vivamus nec auctor nunc.</p>
-                        </div>
                         <div class="clearfix">
-                            <h2>Enter as text</h2>
+                            <h2>Проверить CSS</h2>
                             <div class="input-group input-text">
                                 <textarea class="form-control" rows="7" ng-model="vm.text"></textarea>
                             </div>
-                            <div ng-if="vm.result" class="response panel panel-default" browser-support="vm.result"></div>
-                            <div class="input-group pull-right">
-                                <button class="btn btn-defaul btn-primary btn-lyze" ng-click="vm.analyze()">Analyze</button>
+                            <div class="response panel panel-default" browser-support="vm.result"><span class="result">Результат будет здесь</span></div>
+                            <div class="input-group pull-right input-button">
+                                <button class="btn btn-defaul btn-primary btn-lyze" ng-click="vm.analyze()">Проверить</button>
                             </div>
+                        </div>
+                        <div class="about" correct-size min="10" max="30">
+                            <h2>О сайте</h2>
+                            <p>Вы можете проверить свой css-файл на браузерную совместимость, основываясь на <a href="http://web-standards.ru/tag/css/" target="_blank">стандартах CSS3</a></p>
+                            <p>Для этого просто воспользуйтесь вкладкой "Проверить CSS" - поместите свои CSS-стили в область ввода и нажмите кнопку "Проверить". В результате Вы увидете версии браузеров, которые будут стабильно работать с Вашими стилями</p>
+                            <p>Если иконка браузера чёрно-белая, Ваши стили НЕ будут поддерживаться данным браузером. Также анализатор принимает во внимание стили с использованием вендорных префиксов, таких как "<strong>-webkit-</strong>", "<strong>-moz-</strong>" и "<strong>-ms-</strong>"</p>
+                            <p>Ниже Вы можете видеть список всех аттрибутов, приносимых стандартом CSS3. </p>
+                            <br/>
+                            <p><i>P.S. Навигация по алфавиту присутствует.</i></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row row-table">
-            <div class="col-xs-12 alphabet" alphabet>
+            <div class="col-xs-12 alphabet" alphabet="vm.alphabet">
             </div>
             <div class="col-xs-12 help">
                 <div ordered="vm.props"></div>
             </div>
         </div>
-        <script src="bower_components/angular/angular.js"></script>
+        <a id="toTop" href="#top" class="panel panel-default"><span class="glyphicon glyphicon-arrow-up"></span>Наверх</a>
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
 
         <script src="js/app.js"></script>
 
