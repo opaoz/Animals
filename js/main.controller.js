@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    //mememe?
+
     angular
         .module('cssTester')
         .controller('MainController', Controller);
